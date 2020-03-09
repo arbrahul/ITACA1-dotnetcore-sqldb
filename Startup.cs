@@ -40,11 +40,11 @@ namespace DotNetCoreSqlDb
 
             var envvar = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
             
-            if(String.IsNullOrEmpty(envvar))
-                services.AddDbContext<MyDatabaseContext>(options =>
-                    options.UseSqlite("Data Source=localdatabase.db"));
+            //if(String.IsNullOrEmpty(envvar))
+                //services.AddDbContext<MyDatabaseContext>(options =>
+                    //options.UseSqlite("Data Source=localdatabase.db"));
             
-            else 
+            //else 
                  services.AddDbContext<MyDatabaseContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
 
